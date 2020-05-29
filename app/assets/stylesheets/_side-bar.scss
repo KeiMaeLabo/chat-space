@@ -35,6 +35,26 @@
   &__group-list {
     height: calc(100vh - 100px);
     background-color: #2f3e51;
+    color: #ffffff;
+    padding: 0 20px;
+
+    .side-bar__group {
+      padding: 20px 0 40px 0;
+
+      .side-bar__group-name {
+        font-size: 15px;
+
+      }
+      .side-bar__group-message {
+        margin-top: 5px;
+        font-size: 11px;
+
+      }
+
+    }
+
+
+
   }
 }
 
