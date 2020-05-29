@@ -1,8 +1,15 @@
 .side-bar
   .side-bar__user-name
-    .side-bar__user-name__top-items
-      .side-bar__user-name__top-items__name
+    .side-bar__top-items
+      .side-bar__name
+        %p keimae
 
-      .side-bar__user-name__top-items__icons
-
+      .side-bar__icon-list
+        = link_to "#", class: "side-bar__icon" do
+          = icon('far', 'edit')
+          %span<>
+        = link_to "#", class: "side-bar__icon" do
+          = icon('fa', 'cog')
+          %span<>
+        
   .side-bar__group-list
