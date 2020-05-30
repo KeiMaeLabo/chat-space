@@ -9,7 +9,6 @@
     = link_to '#', class: "chat__edit" do
       Edit
 
-
   .chat__message-list
     .chat__message-box
       .chat__user-date
@@ -28,5 +27,13 @@
       .chat__message
         こんにちは
 
-
   .chat__message-form
+    = form_with url: '#', method: :post, class: "form" do |f|
+      .chat__form-contents
+        %input.input-content{type: "text", placeholder: "type a message" }
+        %label.input-image
+          = icon('far', 'image')
+          %input.hidden{type: "file"}
+
+      %input.form-submit{type: "submit", value: "Send"}
+      
