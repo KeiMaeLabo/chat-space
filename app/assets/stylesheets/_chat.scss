@@ -35,18 +35,43 @@
       display: block;
       margin-top: 28px;
       line-height: 40px;
-
     }
-
-
   }
+
   &__message-list {
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
+    padding: 35px 40px 0px;
+
+      .chat__message-box {
+        margin-bottom: 46px;
+        
+        .chat__user-date {
+          display: flex;
+          
+          .chat__user {
+            color: #333333;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          .chat__date {
+            color: #999999;
+            font-size: 12px;
+            padding-left: 10px;
+          }
+        }
+        .chat__message {
+          color: #434A54;
+          font-size: 14px;
+          margin-top: 12px;
+        }
+      }
   }
+  
   &__message-form {
     height: 90px;
     background-color: #d2d2d2;
+    padding: 20px 40px;
   }
 
 }
