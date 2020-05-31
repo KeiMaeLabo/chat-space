@@ -1,0 +1,39 @@
+.chat
+  .chat__header
+    .chat__group
+      .chat__group-name
+        techcampnagoya
+      %ul.chat__member-list
+        Member：
+        %li.chat__member keimae
+    = link_to '#', class: "chat__edit" do
+      Edit
+
+  .chat__message-list
+    .chat__message-box
+      .chat__user-date
+        .chat__user
+          keimae
+        .chat__date
+          2020/05/30(Sat) 12:00:00
+      .chat__message
+        おはよう！
+    .chat__message-box
+      .chat__user-date
+        .chat__user
+          keimae
+        .chat__date
+          2020/05/30(Sat) 12:12:00
+      .chat__message
+        こんにちは
+
+  .chat__message-form
+    = form_with url: '#', method: :post, class: "form" do |f|
+      .form-contents
+        %input.input-content{type: "text", placeholder: "type a message" }
+        %label.input-image
+          = icon('far', 'image')
+          %input.hidden{type: "file"}
+
+      %input.form-submit{type: "submit", value: "Send"}
+      
