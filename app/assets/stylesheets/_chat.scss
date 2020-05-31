@@ -22,8 +22,13 @@
         font-size: 12px;
         margin-top: 15px;
         color: #999999;
+
+        .chat__member {
+          padding-right: 5px;
+        }
       }
     }
+    
     .chat__edit {
       height: 40px;
       width: 72px;
@@ -77,7 +82,7 @@
       display: flex;
       justify-content: space-between;
 
-      .chat__form-contents {
+      .form-contents {
         width: 100%;
         background-color: #fff;
         position: relative;
