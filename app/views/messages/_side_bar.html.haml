@@ -2,13 +2,13 @@
   .side-bar__user-name
     .side-bar__top-items
       .side-bar__name
-        keimae
+        = current_user.name
 
       .side-bar__icon-list
         = link_to "#", class: "side-bar__icon" do
           = icon('far', 'edit')
           %span<>
-        = link_to "#", class: "side-bar__icon" do
+        = link_to edit_user_path(current_user), class: "side-bar__icon" do
           = icon('fa', 'cog')
           %span<>
         
