@@ -5,16 +5,18 @@
         = current_user.name
 
       .side-bar__icon-list
-        = link_to "#", class: "side-bar__icon" do
+        = link_to new_group_path, class: "side-bar__icon" do
           = icon('far', 'edit')
           %span<>
         = link_to edit_user_path(current_user), class: "side-bar__icon" do
           = icon('fa', 'cog')
           %span<>
         
-  .side-bar__group-list
-    .side-bar__group
-      .side-bar__group-name
-        techcampnagoya
-      .side-bar__group-message
-        まだメッセージはありません。
+  .Group-list
+    - current_user.groups.each do |group|
+      .Group
+        = link_to '#', class: "Group-a" do
+          .group-name
+            = group.name
+          .group-message
+            メッセージはまだありません。
