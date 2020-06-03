@@ -2,38 +2,25 @@
   .chat__header
     .chat__group
       .chat__group-name
-        techcampnagoya
+        = @group.name
       %ul.chat__member-list
         Member：
-        %li.chat__member keimae
-    = link_to 'localhost:3000/groups/1/edit', class: "chat__edit" do
+        - @group.users.each do |user|
+          %li.chat__member
+            = user.name
+
+    = link_to edit_group_path(@group), class: "chat__edit" do
       Edit
 
   .chat__message-list
-    .chat__message-box
-      .chat__user-date
-        .chat__user
-          keimae
-        .chat__date
-          2020/05/30(Sat) 12:00:00
-      .chat__message
-        おはよう！
-    .chat__message-box
-      .chat__user-date
-        .chat__user
-          keimae
-        .chat__date
-          2020/05/30(Sat) 12:12:00
-      .chat__message
-        こんにちは
+    = render @messages
 
   .chat__message-form
-    = form_with url: '#', method: :post, class: "form" do |f|
+    = form_with model: [@group, @message], html: {class: "form"}, local: true do |f|
       .form-contents
-        %input.input-content{type: "text", placeholder: "type a message" }
-        %label.input-image
+        = f.text_field :content, class: 'input-content', placeholder: 'type a message'
+        = f.label :image, class: 'input-image' do
           = icon('far', 'image')
-          %input.hidden{type: "file"}
-
-      %input.form-submit{type: "submit", value: "Send"}
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form-submit'
       
